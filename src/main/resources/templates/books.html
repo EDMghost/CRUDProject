@@ -1,0 +1,34 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Oldal címe</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <h1>Könyvek</h1>
+
+    <div class="link-container">
+        <div th:replace="~{fragments/navbar :: navbar}" class="navbar"></div>
+        <a th:href="@{/books/new}">Új könyv</a>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Cím</th>
+                <th>Szerző</th> <!-- új oszlop -->
+                <th>Műveletek</th>
+            </tr>
+            <tr th:each="book : ${books}">
+                <td th:text="${book.id}"></td>
+                <td th:text="${book.title}"></td>
+                <td th:text="${book.author != null ? book.author.name : ''}"></td> <!-- szerző neve -->
+                <td>
+                    <a th:href="@{/books/edit/{id}(id=${book.id})}">Szerkesztés</a>
+                    <a th:href="@{/books/delete/{id}(id=${book.id})}">Törlés</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>

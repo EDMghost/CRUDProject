@@ -1,0 +1,248 @@
+/* Alap stílusok az egész oldalra */
+body {
+    font-family: Arial, sans-serif;
+    background-color: mediumpurple;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body.auth-page {
+    display: flex;
+    justify-content: center;  /* vízszintesen középre */
+    align-items: center;      /* függőlegesen középre */
+    height: 100vh;            /* teljes viewport magasság */
+    margin: 0;
+    background-color: mediumpurple;
+}
+
+/* Container a tartalomnak */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* H1 címsorok */
+h1 {
+    text-align: center;
+    padding-top: 100px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Linkek */
+a {
+    text-decoration: none;
+    text-align: center;
+    color: #333333;
+    margin-right: 10px;
+}
+
+/* Linkek középre a táblázat fölött */
+.link-container {
+    display: block;
+    justify-content: center;  /* középre igazítás */
+    gap: 20px;                /* távolság a linkek között */
+    margin-bottom: 20px;      /* lejjebb tolja a táblázat felett */
+    text-align: center;
+}
+
+.form-container {
+    display: block;
+    justify-content: center;  /* középre igazítás */
+    gap: 20px;                /* távolság a linkek között */
+    margin-bottom: 20px;      /* lejjebb tolja a táblázat felett */
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Táblázatok */
+table {
+    width: auto;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+/* Űrlapok */
+form {
+    margin-top: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.select-author {
+    width: 200px;          /* fix szélesség */
+    max-width: 100%;       /* ne lépje túl a konténert */
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+    margin-bottom: 30px; /* kicsit lejjebb tolja a tartalomhoz képest */
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    justify-content: center; /* középre igazítás */
+    gap: 20px; /* távolság a linkek között */
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ffdd57;
+}
+
+/* Hibák, figyelmeztetések */
+.error {
+    color: red;
+    font-weight: bold;
+}
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+/* Középre igazítás a teljes képernyőn */
+.auth-container {
+    height: fit-content;
+    width: 360px;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.auth-container h1 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #333;
+}
+
+.auth-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2e7fff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.auth-container form {
+    height: 360px;
+    position: relative;
+    top: 50px; /* reduce this number */
+}
+
+.auth-container button:hover {
+    background-color: #1a5fe0;
+}
+
+.auth-container p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.auth-container p a {
+    color: #2e7fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-container p a:hover {
+    text-decoration: underline;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center; /* vízszintesen középre */
+    text-align: center;       /* középre igazítás a cellákban */
+    margin-top: 20px;        /* lejjebb tolja a táblázatot */
+}
+table {
+    width: auto;             /* ne foglaljon 100%-ot, hanem a tartalom szélessége */
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 20px;      /* szélesebb cellák */
+    text-align: center;       /* középre igazítás a cellákban */
+}
+th {
+    background-color: #f0f0f0;
+}

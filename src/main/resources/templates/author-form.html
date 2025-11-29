@@ -1,0 +1,20 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Oldal címe</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <h1>Szerző szerkesztése</h1>
+
+    <div class="form-container">
+        <div th:replace="~{fragments/navbar :: navbar}" class="navbar"></div>
+
+        <form action="/authors" method="post" th:object="${author}">
+            <input type="hidden" th:field="*{id}">
+            Név: <input th:field="*{name}">
+            <button type="submit">Mentés</button>
+        </form>
+        <a href="/authors">Vissza</a>
+    </div>
+</body>

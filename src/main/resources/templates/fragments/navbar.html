@@ -1,0 +1,6 @@
+<!-- templates/fragments/navbar.html -->
+<div th:replace="fragments/navbar :: navbar" class="navbar"></div>
+<div th:fragment="navbar">
+    <a th:href="@{/authors}">Szerzők</a> |
+    <a th:href="@{/books}">Könyvek</a>
+</div>

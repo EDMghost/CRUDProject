@@ -1,0 +1,28 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Oldal címe</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <h1>Könyv szerkesztése</h1>
+
+    <!-- Navbar -->
+    <div class="form-container">
+        <div th:replace="~{fragments/navbar :: navbar}" class="navbar"></div>
+
+        <form action="/books" method="post" th:object="${book}">
+            <input type="hidden" th:field="*{id}">
+
+            Cím: <input th:field="*{title}">
+
+            Szerző: <select th:field="*{author.id}" class="select-author">
+                     <option th:each="a : ${authors}" th:value="${a.id}" th:text="${a.name}"></option>
+                    </select>
+
+            <button type="submit">Mentés</button>
+        </form>
+
+        <a th:href="@{/books}">Vissza</a>
+    </div>
+</body>
