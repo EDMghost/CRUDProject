@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import main.repos.AuthorRepository;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/authors")
@@ -38,9 +39,26 @@ public class AuthorController {
         return "author-form";
     }
 
+    /*
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
         authorRepo.deleteById(id);
+        return "redirect:/authors";
+    }
+    */
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+
+        Author author = authorRepo.findById(id).orElseThrow();
+
+        if (!author.getBooks().isEmpty()) {
+            redirectAttributes.addFlashAttribute("error",
+                    "A szerző nem törölhető, mert vannak hozzá tartozó könyvek!");
+            return "redirect:/authors";
+        }
+
+        authorRepo.delete(author);
         return "redirect:/authors";
     }
 }

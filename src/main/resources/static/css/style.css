@@ -45,7 +45,6 @@ a {
     text-decoration: none;
     text-align: center;
     color: #333333;
-    margin-right: 10px;
 }
 
 /* Linkek középre a táblázat fölött */
@@ -204,9 +203,7 @@ button:hover {
 }
 
 .auth-container form {
-    height: 360px;
-    position: relative;
-    top: 50px; /* reduce this number */
+    margin-bottom: 20px;
 }
 
 .auth-container button:hover {

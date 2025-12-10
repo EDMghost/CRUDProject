@@ -14,11 +14,10 @@ public class Author {
 
     private String name;
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "author")
     private List<Book> books = new ArrayList<>();
 
     // Getters/Setters
-
     public Long getId() {
         return id;
     }
